@@ -1,0 +1,328 @@
+ 
+
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+a{
+    color: #333;
+}
+
+h1,h2{
+    font-weight: 300;
+    line-height: 1.2;
+    margin:10px 0;
+}
+
+p{
+    margin: 10px 0;
+}
+
+img{
+    width: 100%;
+}
+
+/* 查一下 overflow  這邊用overflow會把預設margin弄掉*/
+.navbar{
+    background-color: var(--blue);
+    color: #fff;
+}
+
+.container{
+    max-width: 1100px;
+    margin: 0 auto;
+    overflow: auto;
+    padding:  0 40px;
+}
+
+
+.navbar .flex{
+    justify-content: space-between;
+}
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.navbar ul{
+    display: flex;
+}
+
+.navbar a{
+    color: #fff;
+    padding: 10px;
+    margin: 0 5px;
+}
+
+.navbar a:hover{
+    border-bottom: 2px solid #fff;
+}
+
+
+/* Stats  */
+
+.stats{
+    padding-top: 120px;
+    animation: slideInFromBottom 1s ease-in;
+    
+}
+
+
+.stats .grid-3{
+    
+    grid-template-columns: repeat(3,1fr);
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+
+
+.stats-heading{
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    
+}
+
+.stats .grid h3{
+    font-size: 35px;
+}
+
+.stats .grid p{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+
+/*CLi*/
+
+/*這裡觀念要再清楚一點 用到row就不知道了，後面的frist-child之前做過，但沒寫過>的用法，要查*/
+.cli .grid{
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr);
+}
+
+.cli .grid > *:first-child{
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+}
+
+
+/*cloud*/
+
+.cloud .grid{
+    grid-template-columns: 4fr 3fr;
+}
+
+.cloud .lead{
+    font-size: 20px;
+}
+
+
+
+/* languages */
+
+/*動畫效果要再去理解一下 */
+
+
+.languages .flex{
+    flex-wrap: wrap;
+}
+.languages .card{
+    text-align: center;
+    margin: 18px 10px 40px;
+    transition: transform 0.2s ease-in
+}
+
+.languages .card h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.languages .card:hover{
+    transform: translateY(-15px);
+}
+
+
+.footer .grid-3{
+    
+    grid-template-columns: repeat(3,1fr);
+    display: grid;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.social a{
+    padding: 10px;
+}
+
+
+/*features*/
+
+.features-head img ,.docs-head img{
+    width: 200px;
+    justify-self: flex-end;
+}
+
+
+.features-sub-head img{
+    width: 300px;
+    justify-self: flex-end;
+
+}
+
+.features-main .card > i {
+    margin-right: 20px;
+}
+
+.features-main .grid-3{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    padding: 30px;
+}
+/*這邊思緒要再整理一下*/
+
+.features-main .grid-3 > *:first-child{
+    grid-column: 1/ span 3;
+}
+.features-main .grid-3 > *:nth-child(2){
+    grid-column: 1/ span 2;
+}
+
+
+/*docs*/
+
+.docs-main h3{
+    margin: 20px 0;
+}
+
+.docs-main .grid{
+  grid-template-columns: 1fr 2fr;
+  align-items: flex-start;
+}
+
+.docs-main nav li{
+    font-size: 17px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px #ccc solid;
+    
+}
+
+.docs-main nav a{
+    color: #333;
+}
+
+.docs-main a:hover{
+    font-weight: bold;
+}
+ 
+
+/*alert*/
+
+.alert{
+    background-color: var(--light-color);
+    padding: 10px 20px;
+    font-weight: bold;
+    margin: 15px 0;
+
+}
+
+.alert i {
+    margin-right: 10px;
+}
+
+.alert-success{
+    background-color: var(--success-color);
+    color: #fff;
+}
+
+.alert-error{
+    background-color: var(--error);
+    color: #fff;
+}
+
+code, pre{
+    background: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+.text-primary{
+    color:var(--blue);
+}
+
+/*text colors*/
+
+.docs-main .text-primary{
+    color:var(--blue);
+}
+
+/*Animations */
+
+/*這裡要去查為什麼這樣寫*/
+
+@keyframes slideInFromLeft{
+    0%{
+        transform: translateX(-100%);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight{
+    0%{
+        transform: translateX(100%);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromTop{
+    0%{
+        transform: translateY(-100%);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromBottom{
+    0%{
+        transform: translateY(100%);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
+}
+
+.hidden{
+    visibility: hidden;
+    height: 0;
+}

@@ -1,0 +1,376 @@
+/*Showcase*/
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+:root{
+    --blue:#047aed;
+    --sec-color:#1c3fa8;
+    --dark-color:#002240;
+    --light-color:#f4f4f4;
+    --success-color:#5cb85c;
+    --error:#d9534f;
+}
+
+.showcase{
+    height: 400px;
+    background-color: var(--blue);
+    color: #fff;
+    position: relative;
+}
+
+.showcase-text{
+    animation: slideInFromLeft 1s ease-in;
+}
+
+.showcase h1{
+    font-size: 40px;
+}
+
+.showcase p{
+    margin: 20px 0;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:20px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.showcase .grid{
+    grid-template-columns: 55% 45% ;
+    gap:30px;
+    overflow: visible;
+}
+
+.card{
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    margin: 10px;
+    color: #333;
+}
+
+/*cursor:pointer 查一下*/
+
+.btn{
+    display: inline-block;
+    padding: 5px 20px;
+    cursor: pointer;
+    background-color: var(--blue);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-outline{
+    background-color: transparent;
+    border: 1px solid #fff;
+}
+
+.btn:hover{
+    transform: scale(0.95);
+}
+
+.showcase-form{
+    position: relative;
+    top: 60px;
+    height: 350px;
+    width: 400px;
+    padding: 40px;
+    justify-content: flex-end;
+    z-index: 100;
+    animation: slideInFromRight 1s ease-in;
+   
+    
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+
+
+/*transform屬性查一下，這邊用skewY ，為什麼前面要加入webkit moz ms */
+.showcase::before,
+.showcase::after{
+    content: "";
+    position: absolute;
+    height: 100px;
+    background-color: #fff;
+    bottom: -70px;
+    left: 0;
+    right: 0;
+    transform: skewY(-3deg);
+    -webkit-transform: skewY(-3deg);
+    -moz-transform: skewY(-3deg);
+    -ms-transform: skewY(-3deg);
+    
+}
+
+.showcase-form .form-control{
+    margin: 30px 0;
+}
+
+
+.showcase-form input[type='text'],
+.showcase-form input[type='email']{
+    border: 0;
+    border-bottom: 1px solid #333;
+    width: 100%;
+    padding: 3px;
+    font-size: 16px;
+}
+
+.showcase-form input:focus{
+    outline: none;
+}
+
+
+/*margin padding */
+
+.my-1{
+    margin: 1rem 0;
+}
+
+.my-2{
+    margin: 1.5rem 0;
+}
+
+.my-3{
+    margin: 2rem,0;
+}
+
+.my-4{
+    margin: 3rem 0;
+}
+
+.my-5{
+    margin: 4rem 0;
+}
+
+.m-1{
+    margin: 1rem;
+}
+
+.m-2{
+    margin: 1.5rem;
+}
+
+.m-3{
+    margin: 2rem;
+}
+
+.m-4{
+    margin: 3rem;
+}
+
+.m-5{
+    margin: 4rem;
+}
+
+.py-1{
+    padding: 1rem 0;
+}
+
+.py-2{
+    padding: 1.5rem 0;
+}
+
+.py-3{
+    padding: 2rem 0;
+}
+
+.py-4{
+    padding: 3rem 0;
+}
+
+.py-5{
+    padding: 4rem 0;
+}
+
+.p-1{
+    padding: 1rem;
+}
+
+.p-2{
+    padding: 1.5rem;
+}
+
+.p-3{
+    padding: 2rem;
+}
+
+.p-4{
+    padding: 3rem;
+}
+
+.p-5{
+    padding: 4rem;
+}
+
+
+
+.bg-primary, .btn-primary{
+    background-color: var(--blue);
+    color: #fff;
+}
+
+.bg-secondary, .btn-secondary{
+    background-color: var(--sec-color);
+    color: #fff;
+}
+
+.bg-dark, .btn-dark{
+    background-color: var(--dark-color);
+    color: #fff;
+}
+.bg-light, .btn-light{
+    background-color: var(--light-color);
+    color: #333;
+}
+
+.bg-primary a, .btn-primary a,
+.bg-secondary a, .btn-secondary a,
+.bg-dark a, .btn-dark a,
+.bg-light a, .btn-light a{
+
+    color: #fff;
+
+}
+
+
+/*text  size */
+
+.sm{
+    font-size: 1rem;
+}
+
+.md{
+    font-size: 2rem;
+}
+.lg{
+    font-size: 3rem;
+}
+.xl{
+    font-size: 4rem;
+}
+
+
+
+@media(max-width: 768px){
+    
+    .grid,
+    .showcase .grid,
+    .stats .grid,
+    .cli .grid,
+    .cloud .grid,
+    .features-main .grid{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .showcase{
+        height: auto;
+
+    }
+
+    .showcase-text{
+    text-align: center;
+    margin-top: 40px;
+    }
+
+    .showcase-form{
+        justify-self: center;
+        margin: auto;
+    }
+
+    .cli .grid > *:first-child{
+        grid-column: 1 ;
+        grid-row: 1 ;
+    }
+
+    .stats-heading{
+        text-align: center;
+        margin: auto;
+    }
+
+    .social a{
+        padding: 5px;
+    }
+
+    .features-head,.features-sub-head,.docs-head{
+        text-align: center;
+    }
+
+    .features-head img,.features-sub-head img,.docs-head img{
+        justify-self: center;
+    }
+    /*想一下*/
+    .features-main .grid > *:first-child,
+    .features-main .grid >*:nth-child(2){
+        grid-column:1;
+    }
+
+
+}
+
+@media(max-width: 500px){
+    .navbar{
+        height: 110px;
+    }
+
+    .navbar .flex{
+        flex-direction: column;
+    }
+
+    .navbar ul{
+        padding: 10px;
+        background-color: rgba(0,0,0, 0.1);
+    }
+}
+
+
+
+@keyframes slideInFromLeft{
+    0%{
+        transform: translateX(-100%);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight{
+    0%{
+        transform: translateX(100%);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromTop{
+    0%{
+        transform: translateY(-100%);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromBottom{
+    0%{
+        transform: translateY(100%);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
+}
